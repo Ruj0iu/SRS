@@ -8,8 +8,8 @@ HOST = 'localhost'
 PORT = 65432
 
 # Simulate shared secret key (should match Alice’s key)
-shared_key = Secret_Key()
-print("🔑 Shared secret key for decryption:", shared_key.hex())
+shared_key = Secret_Key 
+print("🔑 Shared secret key for decryption:", shared_key)
 
 # Bob's server to receive encrypted messages from Alice
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:

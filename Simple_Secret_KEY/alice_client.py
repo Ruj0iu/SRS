@@ -7,8 +7,8 @@ HOST = 'localhost'
 PORT = 65432
 
 # Same secret key as Bob's
-shared_key = Secret_Key()
-print("🔑 Shared secret key for encryption:", shared_key.hex())
+shared_key = Secret_Key
+print("🔑 Shared secret key for encryption:", shared_key)
 
 message = b"Hello Bob! It's Alice, encrypted."
 
