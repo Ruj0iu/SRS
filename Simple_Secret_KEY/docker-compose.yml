@@ -1,0 +1,28 @@
+version: '3'
+services:
+  alice:
+    build:
+      context: .
+      dockerfile: alice/Dockerfile
+    networks:
+      - insecure-net
+
+  bob:
+    build:
+      context: .
+      dockerfile: bob/Dockerfile
+    networks:
+      - insecure-net
+
+  eve:
+    build:
+      context: .
+      dockerfile: eve/Dockerfile
+    networks:
+      - insecure-net
+    cap_add:
+      - NET_ADMIN
+
+networks:
+  insecure-net:
+    driver: bridge
