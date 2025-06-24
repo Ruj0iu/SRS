@@ -3,7 +3,8 @@ from Crypto.Cipher import AES
 import itertools
 import string
 import sys
-from crypto_utils import  pad_key, key_bytes
+
+
 
 # Start Eve's server to accept connections from Alice
 eve_host = '0.0.0.0'
@@ -12,6 +13,10 @@ eve_port = 65431
 # Bob's address inside the Docker network
 bob_host = 'bob'
 bob_port = 65432
+
+
+
+
 
 print("🔌 [Eve] Starting MITM proxy...")
 

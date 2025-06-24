@@ -11,7 +11,7 @@ PORT = 65431  # Eve's port
 KEY = b'key1'
 
 
-sleep(3)  # wait for Bob to be ready
+sleep(6)  # wait for Eve to be ready
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect((HOST, PORT))
     message = b'Hello Bob!'
