@@ -7,6 +7,7 @@ from crypto_utils import  pad_key, key_bytes , decrypt_message
 
 
 def brute_force_key(encrypted_data):
+    print("🔍 Starting brute-force key search...")
     attempts = 0
     charset = string.printable  # or string.ascii_letters + string.digits
     for key_tuple in itertools.product(charset, repeat=4):

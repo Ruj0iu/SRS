@@ -2,6 +2,7 @@ import socket
 from Crypto.Cipher import AES
 import itertools
 import string
+import sys
 from crypto_utils import  pad_key, key_bytes
 
 # Start Eve's server to accept connections from Alice
@@ -36,5 +37,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as listener:
             to_bob.sendall(data)
             print("📤 [Eve] Forwarded message to Bob.")
 
-print("✅ [Eve] MITM session complete.")
+        
 
+
+print("✅ [Eve] MITM session complete.")

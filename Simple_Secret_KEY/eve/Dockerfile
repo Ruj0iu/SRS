@@ -12,7 +12,8 @@ RUN pip install pycryptodome scapy
 
 COPY ../crypto_utils.py .
 COPY eve/eve_sniffer.py .
-COPY eve/eve_bruteforce.py .
+# COPY eve/eve_bruteforce.py .
 
 # CMD ["python3", "eve_sniffer.py"]
-CMD ["sh", "-c", "python eve_sniffer.py & python eve_bruteforce.py"]
+# CMD ["sh", "-c", "python eve_sniffer.py & python eve_bruteforce.py"]
+CMD ["sh", "-c", "python eve_sniffer.py "]
