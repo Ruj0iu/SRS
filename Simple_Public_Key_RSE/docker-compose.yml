@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+
+
+  bob:
+    build:
+      context: .
+      dockerfile: bob/Dockerfile
+    networks:
+      - insecure-net
+
+  eve:
+    depends_on:
+      - bob
+    build:
+      context: .
+      dockerfile: eve/Dockerfile
+    networks:
+      - insecure-net
+    volumes:
+      - ./logs:/data  # Share `logs` folder with host
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+
+
+  alice:
+    depends_on:
+      - bob
+    build:
+      context: .
+      dockerfile: alice/Dockerfile
+    networks:
+      - insecure-net
+
+
+networks:
+  insecure-net:
+    driver: bridge

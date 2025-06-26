@@ -3,6 +3,7 @@ from Crypto.Cipher import AES
 import itertools
 import string
 import sys
+from time import sleep
 
 
 
@@ -38,6 +39,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as listener:
 
 
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as to_bob:
+            
             to_bob.connect((bob_host, bob_port))
             to_bob.sendall(data)
             print("📤 [Eve] Forwarded message to Bob.")
