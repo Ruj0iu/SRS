@@ -1,5 +1,6 @@
 # bob.py
 from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_OAEP
 import socket
 from time import sleep
 
@@ -33,7 +34,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         print(f"📩 [Bob] Received encrypted message: {encrypted}")
         sleep(2)
         # Decrypt the message
-        from Crypto.Cipher import PKCS1_OAEP
+        
         cipher = PKCS1_OAEP.new(key)
         decrypted = cipher.decrypt(encrypted)
         print(f"🔓 [Bob] Decrypted message: {decrypted.decode()}")
